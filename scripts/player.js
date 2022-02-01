@@ -1,4 +1,3 @@
-//2*** second thing is to create the player to appear in the canvas
 class Player {
   constructor(x, y, size, color) {
     this.x = x;
@@ -6,45 +5,52 @@ class Player {
     this.size = size;
     this.color = color;
     //Jump configuration
-    this.jumpHeight = 12; //<- frames/speed to jump
+    this.jumpHeight = 14; //<- frames/speed to jump
     this.shouldJump = false;
     this.jumpCounter = 0;
     //Spin animation
-    this.spin = 0; //<- stores the current rotation of the player, since is not rotated by default, i need to set it to 0
-    //Get a perfect 90 degree rotation
-    this.spinIncrement = 90 / 32;
+    this.spin = 0;
+    //90 degree rotation completed in 32 frames
+    this.spinRotate= 90 / 32;
   }
-  //First rotation
+  //***6 STEP First rotation
   rotation() {
+    //x & y center poiunt of player square
     let offsetXPosition = this.x + this.size / 2;
     let offsetYPosition = this.y + this.size / 2;
-    //The translate() method adds a translation transformation to the current matrix by moving the canvas and its origin x units horizontally and y units vertically on the grid
+
     ctx.translate(offsetXPosition, offsetYPosition);
-    //The CanvasRenderingContext2D.rotate() method of the Canvas 2D API adds a rotation to the transformation matrix.
+   
     ctx.rotate((this.spin * Math.PI) / 180);
-    ctx.rotate((this.spinIncrement * Math.PI) / 180);
-    ctx.translate(-offsetXPosition, -offsetYPosition); //<- we move it back once iteration is completed
-    this.spin += this.spinIncrement;
+    //Convert to radians
+    ctx.rotate((this.spinRotate * Math.PI) / 180);
+    //Move back once iteration is completed
+    ctx.translate(-offsetXPosition, -offsetYPosition);
+    //Increase spin by values stored in spinRotate to update new rotation
+    this.spin += this.spinRotate;
   }
-  //Counter rotation
+  
   counterRotation() {
     let offsetXPosition = this.x + this.size / 2;
     let offsetYPosition = this.y + this.size / 2;
     ctx.translate(offsetXPosition, offsetYPosition);
+    //Rotate it back from whatever value spin is
     ctx.rotate((-this.spin * Math.PI) / 180);
     ctx.translate(-offsetXPosition, -offsetYPosition);
   }
 
   jump() {
+    //Jump animation have 32 frames, that way i can have the players first 14 frames for the jump + 14 frames to go down
     if (this.shouldJump) {
+      //jump when set to true
       this.jumpCounter++;
       if (this.jumpCounter < 15) {
-        //Go up jump
+        //Jump up
         this.y -= this.jumpHeight;
       } else if (this.jumpCounter > 14 && this.jumpCounter < 19) {
         this.y += 0;
       } else if (this.jumpCounter < 33) {
-        //Come back down from jump
+        //Jump down
         this.y += this.jumpHeight;
       }
       this.rotation();
@@ -52,30 +58,30 @@ class Player {
       if (this.jumpCounter >= 32) {
         this.counterRotation();
         this.spin = 0;
+        //Set to false again when the frames are 32 >=
         this.shouldJump = false;
       }
     }
   }
 
-  // The draw method is so that it will get the player class to render to the canvas
   draw() {
-    this.jump(); // jump() needs to be called before the player is drawn to the canvas, that way the jump can be seen
+    this.jump();
     ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.size, this.size);
-
-    if (this.shouldJump) {
-      this.counterRotation();
-    }
+    //counterRotation() called after fillRect so the rotation can be reset, and other elements are unchanged
+    if (this.shouldJump) { this.counterRotation() }
   }
 }
-let player = new Player(150, 350, 50, "black");
+let player = new Player(150, 350, 50, "MediumTurquoise");
 
 addEventListener("keydown", (event) => {
-  if (event.code === "Space") {
+  if (event.code === "Space") { 
+    //Can't press space again in midair
     if (!player.shouldJump) {
-      // This will prevent the user from double jumping while still in mid air
+      jumpEffect.play();
       player.jumpCounter = 0;
       player.shouldJump = true;
+      canScore = true;
     }
   }
 });

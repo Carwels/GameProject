@@ -4,24 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Square Runner</title>
+    <title>Square Run</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
-    <section id="overlay"></section>
+    <section id="overlay">
+      <div id="card">
+        <p>Score: <span id="card-score">0</span></p>
+        <button onclick="restartGame(this)">Play again?</button>
+      </div>
+    </section>
 
-    <h1>Square Runner</h1>
-    <!-- <button id="start-button">Play</button> -->
+    <h1>Square Run</h1>
     <canvas width="600" height="600" id="canvas"></canvas>
 
     <script src="/scripts/player.js"></script>
+    <script src="/scripts/obstacles.js"></script>
     <script src="/scripts/background.js"></script>
-    <script src="/scripts/game.js"></script>
+    <script src="/scripts/index.js"></script>
   </body>
 </html>
