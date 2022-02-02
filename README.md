@@ -4,8 +4,7 @@
 
 Square Runner is a game I built as a project for IronHack Barcelona during week 3. It's a simple platform jumping game, where you have to avoid every obstacle coming at you, if you crash into any of them you lose. After a period of 10 consecutive jumps, speed will increase.
 
-![]()
-![]()
+
 
 ## Used technologies
 
