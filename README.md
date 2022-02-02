@@ -11,7 +11,6 @@ Square Runner is a game I built as a project for IronHack Barcelona during week 
 - When you hit an enemy game stops and you lose
 - Score points every time you jump an enemy
 - Every 10 points game speed will increase
-- 
 
 ## Installation
 - Clone or download this project
