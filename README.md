@@ -15,7 +15,6 @@ Square Runner is a game I built as a project for IronHack Barcelona during week 
 ## Installation
 - Clone or download this project
 - Open index.html in your own browser
-- 
 - Enjoy!
 
 ## Used technologies
