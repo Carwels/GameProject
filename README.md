@@ -1,3 +1,4 @@
+
 # SQUARE RUNNER
 
 ## Introduction
@@ -21,5 +22,7 @@ Square Runner is a game I built as a project for IronHack Barcelona during week 
 
 - Vanilla JavaScript
 - Canvas HTML element to draw
+
+
 
 
