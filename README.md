@@ -19,7 +19,6 @@ Square Runner is a game I built as a project for IronHack Barcelona during week 
 - [Open in this link:] (https://carwels.github.io/GameProject/)
 - Enjoy!
 
-
 ## Used technologies
 
 - Vanilla JavaScript
