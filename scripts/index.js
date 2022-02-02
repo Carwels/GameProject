@@ -15,7 +15,7 @@ let gameStartEffect = new Audio(
 let score = 0;
 //New obstacle time to appear
 let presetTime = 1 * 1000; 
-let enemySpeed = 5;
+let enemySpeed = 6;
 //Check if score > 10
 let scoreIncrement = 0;
 //No score more than one point at a time
@@ -25,8 +25,8 @@ function startGame() {
   player = new Player(150, 350, 50, "MediumTurquoise");
   arrayBlocks = [];
   score = 0;
-  enemySpeed = 5;
-  presetTime = 1000;
+  enemySpeed = 6;
+  presetTime = 1 * 1000;
 }
 
 function restartGame(button) {
@@ -51,7 +51,7 @@ function drawScore() {
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min - 1)) + min;
 }
-
+//Length of time in miliseconds & Math.random so return 50 / 50 chance to return higher/min length of time from timeInterval
 function randomNumberInterval(timeInterval) {
   let returnTime = timeInterval;
   if (Math.random() < 0.5) {
@@ -79,13 +79,13 @@ function animate() {
 
   //loop throught arrayBlocks and render every block object
   arrayBlocks.forEach((arrayBlock, index) => {
-    //need to target index in the array
+    //need to target index in the array 
     arrayBlock.slide();
     //Finish game when player and block meet
     if (squaresColliding(player, arrayBlock)) {
       cardScore.textContent = score;
       card.style.display = "block";
-      
+      //Called if returns true and collision is made with arrayBlock
       cancelAnimationFrame(animationId);
 
       gameStartEffect.pause();
@@ -97,6 +97,7 @@ function animate() {
     }
     //If rightside is <= 0 remove from the array
     if (arrayBlock.x + arrayBlock.size <= 0) {
+      //Wait canvas until next frame before doing splice
       setTimeout(() => {
         //Just want to remove 1 object
         arrayBlocks.splice(index, 1);

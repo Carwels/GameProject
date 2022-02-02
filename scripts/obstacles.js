@@ -1,8 +1,9 @@
 class AvoidBlock {
     constructor(size, speed) {
       this.x = canvas.width + size; //canvas edge
-      this.y = 400 - size;
+      this.y = 370 - size;
       this.size = size;
+      ctx.beginPath();
       this.color = "black";
       this.slideSpeed = speed;
     }
@@ -14,6 +15,7 @@ class AvoidBlock {
   
     slide() {
       this.draw();
+      ctx.beginPath();
       //decrease x offset of the obstacle, so it moves to the left of the screen
       this.x -= this.slideSpeed; 
     }
@@ -31,14 +33,14 @@ function generateBlocks() {
 
 //If player and block collide return true
 function squaresColliding(player, block) {
-  //Create exact copy of class object
+  //Create exact copy of class object passed into the function
   let side1 = Object.assign(Object.create(Object.getPrototypeOf(player)),player);
   let side2 = Object.assign(Object.create(Object.getPrototypeOf(block)), block);
   //Pixel check collision
   side2.size = side2.size - 10;
   side2.x = side2.x + 10;
   side2.y = side2.y + 10;
-  
+  //Boolean if collision has been made
   return !(
     ( //Side1 to the right of side2
       side1.x > side2.x + side2.size ||

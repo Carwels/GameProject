@@ -26,7 +26,7 @@ body {
   background-image: url("/images/pikseli-grafika-retro-pxl-oblaka-fon-art.jpeg");
 }
 
-#overlay {
+#scoreback {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@ body {
   text-align: center;
 }
 
-#overlay #card {
+#scoreback #card {
   background-color: rgba(17, 21, 53, 0.493);
   background: transparent;
   width: 300px;
@@ -49,13 +49,13 @@ body {
   display: none;
 }
 
-#overlay #card > p {
+#scoreback #card > p {
   font-size: 50px;
   margin-top: 10px;
   user-select: none;
 }
 
-#overlay #card > button {
+#scoreback #card > button {
   transition: 1s ease;
   outline: none;
   color: white;

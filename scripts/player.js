@@ -5,7 +5,7 @@ class Player {
     this.size = size;
     this.color = color;
     //Jump configuration
-    this.jumpHeight = 14; //<- frames/speed to jump
+    this.jumpHeight = 15; //<- frames/speed to jump
     this.shouldJump = false;
     this.jumpCounter = 0;
     //Spin animation
