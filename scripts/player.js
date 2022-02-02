@@ -5,22 +5,22 @@ class Player {
     this.size = size;
     this.color = color;
     //Jump configuration
-    this.jumpHeight = 15; //<- frames/speed to jump
+    this.jumpHeight = 15; //Frames/speed to jump
     this.shouldJump = false;
     this.jumpCounter = 0;
     //Spin animation
     this.spin = 0;
     //90 degree rotation completed in 32 frames
-    this.spinRotate= 90 / 32;
+    this.spinRotate = 90 / 32;
   }
-  //***6 STEP First rotation
+  //Rotation
   rotation() {
-    //x & y center poiunt of player square
+    //x & y center point of player square
     let offsetXPosition = this.x + this.size / 2;
     let offsetYPosition = this.y + this.size / 2;
 
     ctx.translate(offsetXPosition, offsetYPosition);
-   
+
     ctx.rotate((this.spin * Math.PI) / 180);
     //Convert to radians
     ctx.rotate((this.spinRotate * Math.PI) / 180);
@@ -29,7 +29,7 @@ class Player {
     //Increase spin by values stored in spinRotate to update new rotation
     this.spin += this.spinRotate;
   }
-  
+
   counterRotation() {
     let offsetXPosition = this.x + this.size / 2;
     let offsetYPosition = this.y + this.size / 2;
@@ -67,15 +67,17 @@ class Player {
   draw() {
     this.jump();
     ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.size, this.size);
+    ctx.fillRect(this.x, this.y, 50, 50);
     //counterRotation() called after fillRect so the rotation can be reset, and other elements are unchanged
-    if (this.shouldJump) { this.counterRotation() }
+    if (this.shouldJump) {
+      this.counterRotation();
+    }
   }
 }
-let player = new Player(150, 350, 50, "MediumTurquoise");
+let player = new Player(60, 350, 50, "MediumTurquoise");
 
 addEventListener("keydown", (event) => {
-  if (event.code === "Space") { 
+  if (event.code === "Space") {
     //Can't press space again in midair
     if (!player.shouldJump) {
       jumpEffect.play();

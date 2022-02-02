@@ -22,8 +22,10 @@ body {
 #canvas {
   border-style: solid;
   border-color: black;
-  border-radius: 10px;
+  border-radius: 40px;
   background-image: url("/images/pikseli-grafika-retro-pxl-oblaka-fon-art.jpeg");
+  background-position-x: 50%;
+  background-position-y: 42%;
 }
 
 #scoreback {
@@ -56,7 +58,6 @@ body {
 }
 
 #scoreback #card > button {
-  transition: 1s ease;
   outline: none;
   color: white;
   border: none;
@@ -69,4 +70,15 @@ body {
   background: transparent;
   border: 3px solid black;
   outline: none;
+  box-shadow: 0 -5px 3px -3px black, 0 5px 3px -3px black;
+}
+
+.fade {
+  opacity: 0.5;
+}
+.fade:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
