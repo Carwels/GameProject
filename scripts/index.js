@@ -29,7 +29,6 @@ function startGame() {
   score = 0;
   enemySpeed = 6;
   defaultTime = 1 * 1000;
-  gameStartEffect.play();
 }
 
 function restartGame(button) {
@@ -110,6 +109,7 @@ function animate() {
 }
 
 animate();
+gameStartEffect.play();
 
 setTimeout(() => {
   generateBlocks();
