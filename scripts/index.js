@@ -10,7 +10,7 @@ let jumpEffect = new Audio(
   "./sound/jump.wav"
 );
 let gameStartEffect = new Audio(
-  "./sound/ambient.mp3"
+  "../sound/ambient.mp3"
 );
 
 
