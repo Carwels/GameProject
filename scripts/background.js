@@ -5,5 +5,6 @@ function drawBackgroundLine() {
   ctx.lineWidth = 7   ;
   ctx.strokeStyle = "AliceBlue";
   ctx.stroke()
+  
 }
 

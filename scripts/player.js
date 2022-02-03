@@ -80,6 +80,7 @@ addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     //Can't press space again in midair
     if (!player.shouldJump) {
+      gameStartEffect.play()
       jumpEffect.play();
       player.jumpCounter = 0;
       player.shouldJump = true;

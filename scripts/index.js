@@ -109,7 +109,6 @@ function animate() {
 }
 
 animate();
-gameStartEffect.play();
 
 setTimeout(() => {
   generateBlocks();
