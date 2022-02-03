@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url("images/pikseli-grafika-retro-pxl-oblaka-fon-art.jpeg");
+  background-image: url("~/images/pikseli-grafika-retro-pxl-oblaka-fon-art.jpeg");
   background-size: cover;
   color: white;
   height: 100vh;
@@ -23,7 +23,7 @@ body {
   border-style: solid;
   border-color: black;
   border-radius: 40px;
-  background-image: url("images/pikseli-grafika-retro-pxl-oblaka-fon-art.jpeg");
+  background-image: url("~/images/pikseli-grafika-retro-pxl-oblaka-fon-art.jpeg");
   background-position-x: 50%;
   background-position-y: 42%;
 }
