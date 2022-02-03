@@ -1,5 +1,5 @@
 
-# SQUARE RUNNER
+# SQUARE JUMP
 
 ## Introduction
 
