@@ -16,7 +16,7 @@ let gameStartEffect = new Audio(
 
 //New obstacle time to appear
 let defaultTime = 1 * 1000; 
-let enemySpeed = 6;
+let enemySpeed = 5;
 //Check if score > 10
 let score = 0;
 let scoreIncrease = 0;
@@ -27,7 +27,7 @@ function startGame() {
   player = new Player(60, 350, 50, "MediumTurquoise");
   arrayBlocks = [];
   score = 0;
-  enemySpeed = 6;
+  enemySpeed = 5;
   defaultTime = 1 * 1000;
   gameStartEffect.play()
 }
@@ -57,8 +57,8 @@ function randomNumber(min, max) {
 //Length of time in miliseconds & Math.random so return 50 / 50 chance to return higher/min length of time from timeInterval
 function randomNumberInterval(timeInterval) {
   let returnTime = timeInterval;
-  if (Math.random() < 0.4) {
-    returnTime += randomNumber(defaultTime / 3, defaultTime * 2);
+  if (Math.random() < 0.3) {
+    returnTime += randomNumber(defaultTime / 3, defaultTime * 3);
   } else {
     returnTime -= randomNumber(defaultTime / 5, defaultTime / 2);
   }

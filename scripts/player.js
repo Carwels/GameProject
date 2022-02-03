@@ -5,7 +5,7 @@ class Player {
     this.size = size;
     this.color = color;
     //Jump configuration
-    this.jumpHeight = 15; //Frames/speed to jump
+    this.jumpHeight = 18; //Frames/speed to jump
     this.shouldJump = false;
     this.jumpCounter = 0;
     //Spin animation
@@ -80,6 +80,7 @@ addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     //Can't press space again in midair
     if (!player.shouldJump) {
+
       jumpEffect.play();
       player.jumpCounter = 0;
       player.shouldJump = true;

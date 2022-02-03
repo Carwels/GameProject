@@ -19,6 +19,15 @@ body {
   text-shadow: 0 0 10px black;
 }
 
+h1 {
+padding-top: 10px;
+}
+
+#instruction {
+  font-size: 25px;
+  padding-bottom: 25px;
+}
+
 #canvas {
   border-style: solid;
   border-color: black;
