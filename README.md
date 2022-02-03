@@ -16,6 +16,7 @@ Square Jump is a game I built as a project for IronHack Barcelona during week 3.
 ## Installation
 - Clone or download this project
 - Open index.html in your own browser
+- [Click to play](https://carwels.github.io/GameProject/)
 - Enjoy!
 
 ## Used technologies
